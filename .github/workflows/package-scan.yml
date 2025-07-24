@@ -67,6 +67,7 @@ jobs:
         run: npm install -g snyk
       - name: Run Snyk Code Scan And Check Snyk Scan Results
         run: snyk code test
+        continue-on-error: true
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 

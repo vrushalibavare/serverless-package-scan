@@ -27,16 +27,6 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
 
-      - name: Debug AWS credentials
-        run: |
-          echo "Access Key ID length: ${#AWS_ACCESS_KEY_ID}"
-          echo "Secret Key length: ${#AWS_SECRET_ACCESS_KEY}"
-          echo "Region: $AWS_DEFAULT_REGION"
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_DEFAULT_REGION: ap-southeast-1
-
       - name: Terraform Init
         run: terraform init
         env:

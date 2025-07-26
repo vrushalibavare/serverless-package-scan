@@ -10,6 +10,11 @@ terraform {
       version = "~> 2.0"
     }
   }
+  backend "s3" {
+    bucket = "sctp-ce10-tfstate"
+    key    = "package-vul-scan-vrushali.tfstate"
+    region = "ap-southeast-1"
+  }
 }
 
 # Configure the AWS Provider
